@@ -1,47 +1,59 @@
-import java.io.*; import java.util.*;
-import java.util.stream.*;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    static Set<String> strs = new HashSet<>();
-    static List<Integer> sub = new ArrayList<>();
-    static int n;
-    static boolean[] chosen;
-    static String s;
-    static IOHandler io = new IOHandler();
+    List<Integer> possible = new ArrayList<>();
+    boolean[] used = new boolean[4];
+    static int[] cards;
+	public static void main(String[] args) throws Exception {
+		IOHandler io = new IOHandler();
+        int N = io.nextInt();
 
-    public static void main(String[] args) throws Exception {
-        s = io.nextStr();
-        n = s.length();
-        chosen = new boolean[n];
-        
-        search();
-
-        io.println(strs.size());
-
-        for (String str : strs.stream().sorted().collect(Collectors.toList())) io.println(str);
-        io.close();
-    }
-
-    static void search() {
-        if (sub.size() == n) {
-            String sa = "";
-            for (int i : sub) {
-                sa += s.toCharArray()[i];
-            }
-            strs.add(sa);
-        } else {
-            for (int i = 0; i < n; i++) {
-                if (chosen[i]) continue;
-                chosen[i] = true;
-                sub.add(i);
-                search();
-                chosen[i] = false;
-                sub.remove(sub.size() - 1);
+        for (int i = 0; i < N; i++) {
+            cards = new int[4];
+            for (int j = 0; j < 4; j++) {
+                cards[j] = io.nextInt();
             }
         }
+	}
+
+    public void recur() {
+        if (possible.size() == 4) {
+            // case 1: (n~(n~(n~n)))
+            outer: for (int op1 = 0; op1 < 4; op1++) {
+                for (int op2 = 0; op2 < 4; op2++) {
+                    for (int op3 = 0; op3 < 4; op3++) {
+                        // int f = op(n, m, op1);
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < 4; i++) {
+				if (used[i]) continue;
+				used[i] = true;
+				possible.add(cards[i]);
+				recur();
+				used[i] = false;
+				possible.remove(possible.size() - 1);
+			}
+        }
     }
-    
+
+    public int op(int n1, int n2, int op) {
+        switch (op) {
+            case 0: return n1 + n2;
+            case 1: return n1 - n2;
+            case 2: return n1 * n2;
+            case 3: 
+                if (n2 == 0 || n1 / n2 % 1 != 0) {
+                    break;
+                }
+                return n1 / n2;
+        }
+        return Integer.MIN_VALUE;
+    }
 }
+
 
 class IOHandler extends PrintWriter {
     StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
