@@ -1,5 +1,14 @@
+/*=
+	MADE BY DISHI
+
+	code to put in main:
+		BacknForth bf = new BacknForth();
+		bf.getPossible(0, 1000, bf.a, 1000, bf.b);
+		bf.io.println(bf.possible.size());
+		bf.io.close();
+=*/
+
 import java.util.*;
-import java.io.IOException;
 
 public class BacknForth {
 	List<Integer> a, b;
@@ -7,7 +16,12 @@ public class BacknForth {
 
 	IOHandler io;
 
-	public BacknForth() throws IOException {
+	public BacknForth() throws Exception {
+		/*=
+      REASONING:
+      todo
+    =*/
+
 		io = new IOHandler();
 		a = new ArrayList<>();
 		b = new ArrayList<>();

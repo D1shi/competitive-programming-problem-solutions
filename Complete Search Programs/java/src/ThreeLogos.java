@@ -1,10 +1,10 @@
-/*
+/*=
   MADE BY DISHI
-  
+ 
   code to put in main:
-		ThreeLogos tl = new ThreeLogos();
-		tl.run(); tl.io.close();
-*/
+    ThreeLogos tl = new ThreeLogos();
+    tl.run(); tl.io.close();
+=*/
 
 import java.util.*;
 
@@ -25,11 +25,11 @@ public class ThreeLogos {
     int a2 = logos[1][0] * logos[1][1];
     int a3 = logos[2][0] * logos[2][1];
 
-    /*
-     * REASONING:
-     * If square root of sums of the areas of the logos is an int, 
-     * that means you can put the logos in a perfect square 
-     */
+    /*=
+      REASONING:
+        If square root of sums of the areas of the logos is an int, 
+        that means you can put the logos in a perfect square 
+    =*/
     
     int max = (int) Math.sqrt((double) a1 + a2 + a3);
 

@@ -1,37 +1,40 @@
+/*=
+  MADE BY DISHI
+ 
+  code to put in main:
+    CreatingStrings cs = new CreatingStrings();
+		cs.bronze(); cs.io.close();
+=*/
+
 import java.util.*;
-// import java.util.stream.Collectors;
 
 public class CreatingStrings {
-  static Set<String> strs = new HashSet<>();
-  static List<Integer> sub = new ArrayList<>();
-  static int n;
-  static boolean[] chosen;
-  static String s;
-  static IOHandler io = new IOHandler();
+  Set<String> strs = new HashSet<>();
+  List<Integer> sub = new ArrayList<>();
+  int n;
+  boolean[] chosen;
+  String s;
+  IOHandler io;
 
   
   public CreatingStrings() throws Exception {
+    io = new IOHandler();
     s = io.nextStr();
     n = s.length();
     chosen = new boolean[n];
-
-    io.close();
   }
 
-  public Object[] bronze() {
-
+  public void bronze() {
+    /*=
+      REASONING:
+      todo: write explanation
+    =*/
     search();
 
-    Object[] out = new Object[strs.size() + 1];
-    out[0] = strs.size();
+    io.println(strs.size());
 
-    /* 
-    strs = strs.stream().sorted().collect(Collectors.toList());
-
-    for (String str : ) ;
-    */
-
-    return out;
+    for (String str : strs.stream().sorted().toList()) io.println(str);
+    io.close();
   }
 
   public void search() {

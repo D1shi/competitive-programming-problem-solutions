@@ -1,13 +1,13 @@
-/*
- MADE BY DISHI
-
- code to put in main:
+/*=
+  MADE BY DISHI
+ 
+  code to put in main:
 		RotateNShift rs = new RotateNShift();
 		for (Object i : rs.run()) {
 			rs.io.print(i + " ");
 		}
 		rs.io.close();
-*/
+=*/
 
 import java.util.*;
 import java.util.stream.*;
@@ -17,7 +17,6 @@ public class RotateNShift {
   List<Integer> active, cows;
   IOHandler io = new IOHandler();
 
-  // SETUP & INPUT
   public RotateNShift() throws Exception {
     N = io.nextInt(); A = io.nextInt(); T = io.nextInt();
     active = new ArrayList<>(); cows = new ArrayList<>();
@@ -27,7 +26,13 @@ public class RotateNShift {
   }
 
   public Object[] run() {
-    // SOLUTION: Store all changes to the order & active positions in new lists to not lose old info & return order
+    /*=
+      REASONING:
+      Use a new array list to store all the changes
+      we do to the orginal list, then change the orginal 
+      @ end of the step
+    =*/
+
     for (int t = 0; t < T; t++) {
       // STEP 1: Change the order of the cows
       List<Integer> Ncows = new ArrayList<>(cows);
