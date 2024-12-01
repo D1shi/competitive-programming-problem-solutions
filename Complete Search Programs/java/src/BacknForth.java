@@ -1,13 +1,3 @@
-/*=
-	MADE BY DISHI
-
-	code to put in main:
-		BacknForth bf = new BacknForth();
-		bf.getPossible(0, 1000, bf.a, 1000, bf.b);
-		bf.io.println(bf.possible.size());
-		bf.io.close();
-=*/
-
 import java.util.*;
 
 public class BacknForth {
@@ -34,6 +24,13 @@ public class BacknForth {
 		for (int i = 0; i < 10; i++) {
 			b.add(io.nextInt());
 		}
+	}
+
+	public static void main(String[] args) throws Exception {
+		BacknForth bf = new BacknForth();
+		bf.getPossible(0, 1000, bf.a, 1000, bf.b);
+		bf.io.println(bf.possible.size());
+		bf.io.close();
 	}
 
 	public void getPossible(int day, int a, List<Integer> aB, int b, List<Integer> bB) {

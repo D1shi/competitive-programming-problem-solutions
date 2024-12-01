@@ -1,11 +1,3 @@
-/*=
-  MADE BY DISHI
- 
-  code to put in main:
-    CreatingStrings cs = new CreatingStrings();
-		cs.bronze(); cs.io.close();
-=*/
-
 import java.util.*;
 
 public class CreatingStrings {
@@ -16,7 +8,10 @@ public class CreatingStrings {
   String s;
   IOHandler io;
 
-  
+  /*=
+      REASONING:
+      todo: write explanation
+    =*/
   public CreatingStrings() throws Exception {
     io = new IOHandler();
     s = io.nextStr();
@@ -24,17 +19,14 @@ public class CreatingStrings {
     chosen = new boolean[n];
   }
 
-  public void bronze() {
-    /*=
-      REASONING:
-      todo: write explanation
-    =*/
-    search();
+  public static void main(String[] args) throws Exception {
+    CreatingStrings cs = new CreatingStrings();
+    cs.search();
 
-    io.println(strs.size());
+    cs.io.println(cs.strs.size());
 
-    for (String str : strs.stream().sorted().toList()) io.println(str);
-    io.close();
+    for (String str : cs.strs.stream().sorted().toList()) cs.io.println(str);
+    cs.io.close();
   }
 
   public void search() {
