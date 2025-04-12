@@ -2,8 +2,10 @@
 using namespace std;
 
 int main() {
-	int N = 0;
-	cin >> N;
+	freopen("factory.in", "r", stdin);
+	freopen("factory.out", "w", stdout);
+
+	int N; cin >> N;
 	int connections[N] = {0};
 
 	for (int _  = 0; _ < N - 1; _++) {
