@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
+typedef long long int;
 
 int main() {
-    int N; ll out = 0; cin >> N;
+    int N; int out = 0; cin >> N;
     vector<int> arr (N + 2), pref (N + 2), cnt (1000005, 0);
 
     for (size_t i = 1; i <= N; i++) cin >> arr[i];

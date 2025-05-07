@@ -19,6 +19,6 @@ int main() {
         int winning = 0;
         for (int b = 0; b < N; b++) if (beats[b][x] && beats[b][y]) winning++;
         
-        cout << pow(N, 2) - pow(N - winning, 2) << endl;
+        cout << 2 * winning * N - winning * winning << endl;
     }
 }

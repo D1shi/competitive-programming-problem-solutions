@@ -3,7 +3,6 @@ using namespace std;
 
 int main() {
     freopen("haybales.in", "r", stdin);
-	freopen("haybales.out", "w", stdout);
     int N, Q; cin >> N >> Q;
 
     vector<int> haybales (N);
@@ -11,6 +10,7 @@ int main() {
     
     sort(haybales.begin(), haybales.end());
 
+    freopen("haybales.out", "w", stdout);
     while (Q--) {
         int lTarget, rTarget; 
         cin >> lTarget >> rTarget;

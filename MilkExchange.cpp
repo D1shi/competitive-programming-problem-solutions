@@ -1,20 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+using int = long long;
 
 int main() {
     int N, M; string direct; 
     cin >> N >> M >> direct;
 
     map<int, int> trades;
-    vector<ll> cows (N);
-    vector<ll> caps;
+    vector<int> cows (N);
+    vector<int> caps;
 
-    for (ll& c : cows) cin >> c;
+    for (int& c : cows) cin >> c;
     caps = cows;
     
     while (M--) {
-        vector<ll> nCows = cows;
+        vector<int> nCows = cows;
         for (size_t i = 0; i < N; i++) {
             if (cows[i] > 0) {
                 nCows[i]--;
@@ -29,6 +29,6 @@ int main() {
     }
     
     int out = 0;
-    for (const ll& c : cows) out += c;
+    for (const int& c : cows) out += c;
     cout << out;
 }

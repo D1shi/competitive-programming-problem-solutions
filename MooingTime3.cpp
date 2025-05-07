@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
+typedef long long int;
 
 int main() {
-    ll N, T; string S; cin >> N >> T >> S;
+    int N, T; string S; cin >> N >> T >> S;
 
     while (T--) {
-        ll L, U, out = -1; // L & U are min lower and max upper
+        int L, U, out = -1; // L & U are min lower and max upper
         cin >> L >> U; L--;
 
-        for (ll mid = L + 1; mid < U - 1; mid++) {
-            ll lower = L, upper = U - 1;
+        for (int mid = L + 1; mid < U - 1; mid++) {
+            int lower = L, upper = U - 1;
 
             // try to stay as close to edges as possible when increasing bounds
             while (lower < mid && S[mid] == S[lower]) lower++;
